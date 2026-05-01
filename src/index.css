@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 248 250 252;
+  --color-card: 255 255 255;
+  --color-border: 226 232 240;
+  --color-text: 15 23 42;
+  --color-muted: 71 85 105;
+  --color-accent: 79 70 229;
+  --cursor-x: 50%;
+  --cursor-y: 50%;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: 15 23 42;
+  --color-card: 30 41 59;
+  --color-border: 51 65 85;
+  --color-text: 226 232 240;
+  --color-muted: 148 163 184;
+  --color-accent: 96 165 250;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-text antialiased;
+  font-family: 'Space Grotesk', sans-serif;
+  min-height: 100vh;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+  background-image:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.14), transparent 24%),
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 22%),
+    radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.09), transparent 20%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(96, 165, 250, 0.08), transparent 18%);
+  transition: opacity 180ms ease;
+  opacity: 1;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+::selection {
+  background: rgba(96, 165, 250, 0.25);
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-border/70 bg-card/75 backdrop-blur-xl shadow-[0_16px_60px_rgba(15,23,42,0.12)];
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-shell {
+    @apply relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8;
+  }
+
+  .accent-border {
+    position: relative;
+  }
+
+  .accent-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.45), rgba(139, 92, 246, 0.4), rgba(56, 189, 248, 0.38));
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(18);
+  }
+}

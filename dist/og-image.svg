@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="54" x2="1094" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="170" y1="120" x2="1048" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="0.52" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="blur" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="48" fill="url(#bg)"/>
+  <circle cx="980" cy="140" r="150" fill="#8B5CF6" fill-opacity="0.22" filter="url(#blur)"/>
+  <circle cx="240" cy="500" r="180" fill="#60A5FA" fill-opacity="0.18" filter="url(#blur)"/>
+  <circle cx="840" cy="430" r="120" fill="#38BDF8" fill-opacity="0.12" filter="url(#blur)"/>
+  <rect x="72" y="72" width="1056" height="486" rx="36" stroke="url(#accent)" stroke-width="2" stroke-opacity="0.55"/>
+  <text x="110" y="212" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="30" letter-spacing="5">ADITYA GUPTA</text>
+  <text x="110" y="306" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700">I build intelligent</text>
+  <text x="110" y="384" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700">web experiences</text>
+  <text x="110" y="454" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="28">Computer Science Student · React · Tailwind · Motion · Three.js</text>
+  <rect x="904" y="74" width="120" height="120" rx="32" fill="url(#accent)"/>
+  <text x="964" y="154" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700">AG</text>
+</svg>

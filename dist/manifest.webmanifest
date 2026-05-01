@@ -1,0 +1,17 @@
+{
+  "name": "Aditya Gupta Portfolio",
+  "short_name": "Aditya Portfolio",
+  "description": "Premium developer portfolio for Aditya Gupta built with React, Vite, Tailwind CSS, Framer Motion, and Three.js.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/og-image.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
