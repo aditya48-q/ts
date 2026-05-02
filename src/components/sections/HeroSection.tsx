@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiZap } from 'react-icons/fi';
 import { personalDetails } from '../../data/portfolio';
+import { ProfileImage } from '../ui/ProfileImage';
 import { AnimatedButton } from '../ui/AnimatedButton';
-import { GlassCard } from '../ui/GlassCard';
 
 const roles = ['Developer', 'Problem Solver', 'AI Enthusiast'];
 
@@ -20,8 +20,8 @@ export function HeroSection() {
 
   return (
     <section id="home" className="relative overflow-hidden pt-28 sm:pt-32">
-      <div className="section-shell grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr]">
-        <div className="relative z-10 max-w-3xl">
+      <div className="section-shell grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
+        <div className="relative z-10 order-2 max-w-3xl lg:order-1">
           <motion.p
             className="mb-5 inline-flex items-center rounded-full border border-border/70 bg-card/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-muted backdrop-blur"
             initial={{ opacity: 0, y: 12 }}
@@ -150,62 +150,15 @@ export function HeroSection() {
         </div>
 
         <motion.div
-          className="relative z-10 lg:pl-8"
+          className="relative z-10 order-1 flex justify-center lg:order-2 lg:justify-end lg:pl-8"
           initial={{ opacity: 0, scale: 0.95, x: 24 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
         >
-          <GlassCard className="relative overflow-hidden p-6 sm:p-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(96,165,250,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.18),transparent_28%)]" />
-            <div className="absolute -left-8 top-10 h-24 w-24 rounded-full bg-blue-500/20 blur-3xl" />
-            <div className="absolute -right-6 bottom-8 h-28 w-28 rounded-full bg-violet-500/20 blur-3xl" />
-            <div className="relative space-y-6">
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-muted">Portfolio status</p>
-                  <h2 className="mt-2 text-2xl font-semibold text-text">Building high-signal web products</h2>
-                </div>
-                <div className="rounded-full border border-border/70 bg-card/80 px-3 py-2 text-xs font-semibold text-accent">
-                  Available for projects
-                </div>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  { label: 'Focus', value: 'Frontend + AI workflows' },
-                  { label: 'Core stack', value: 'React, Tailwind, Motion' },
-                  { label: 'Learning', value: 'DSA, system design, UX' },
-                  { label: 'Approach', value: 'Polish, performance, clarity' },
-                ].map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-border/70 bg-bg/60 p-4">
-                    <p className="text-xs uppercase tracking-[0.26em] text-muted">{item.label}</p>
-                    <p className="mt-2 text-sm font-medium text-text">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="rounded-3xl border border-border/70 bg-bg/60 p-5">
-                <p className="text-xs uppercase tracking-[0.28em] text-muted">Interface philosophy</p>
-                <p className="mt-3 text-sm leading-7 text-muted">
-                  Premium portfolios feel tactile, confident, and responsive. This build combines motion, subtle depth, and
-                  high-contrast typography to keep the content sharp across themes.
-                </p>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-3">
-                {[
-                  { label: 'Focus', value: 'Frontend craft' },
-                  { label: 'Energy', value: 'AI-assisted' },
-                  { label: 'Goal', value: 'Top-tier internships' },
-                ].map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-border/70 bg-bg/55 px-4 py-3">
-                    <p className="text-[0.65rem] uppercase tracking-[0.3em] text-muted">{item.label}</p>
-                    <p className="mt-2 text-sm font-medium text-text">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </GlassCard>
+          <div className="relative flex w-full items-center justify-center lg:justify-end">
+            <div className="absolute -z-10 h-[12rem] w-[12rem] rounded-full bg-blue-500/15 blur-3xl sm:h-[16rem] sm:w-[16rem] lg:h-[18rem] lg:w-[18rem]" />
+            <ProfileImage className="mx-auto lg:mx-0" />
+          </div>
         </motion.div>
       </div>
     </section>

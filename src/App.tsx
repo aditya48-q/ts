@@ -20,6 +20,10 @@ const ThreeBackground = lazy(() =>
   import('./components/sections/ThreeBackground').then((module) => ({ default: module.ThreeBackground })),
 );
 
+const Chatbot = lazy(() =>
+  import('./components/chatbot/Chatbot').then((module) => ({ default: module.Chatbot })),
+);
+
 const sectionIds = navigationLinks.map((link) => link.id);
 
 export default function App() {
@@ -69,6 +73,9 @@ export default function App() {
       </AnimatePresence>
       <Footer />
       <BackToTopButton visible={showBackToTop} />
+      <Suspense fallback={null}>
+        <Chatbot />
+      </Suspense>
     </div>
   );
 }
